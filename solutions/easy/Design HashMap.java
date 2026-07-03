@@ -3,29 +3,26 @@
             // Language: Java
             // Link: https://leetcode.com/problems/design-hashmap/
 
+                return curr.next.value;
             }
-                return l.get(1);
-            if(l.get(0)==key){
-        for(List<Integer> l:map){
-    public int get(int key) {
-    
-    }
-        map.add(i);
-        i.add(key);i.add(value);
-        List<Integer> i=new ArrayList<>();
+            curr=curr.next;
         }
+        
         return -1;
-    }
-    
-    public void remove(int key) {
-        for(List<Integer> l:map){
-            if(l.get(0)==key){
-                map.remove(l);
-            }
-        }
-    }
-}
 
-/**
- * Your MyHashMap object will be 
+    }
+    public void remove(int key) { 
+
+        int hash=hash(key);
+        Node curr=buckets[hash];
+        while(curr.next!=null){
+            if(curr.next.key==key){
+                
+                curr.next=curr.next.next;
+            }
+            curr=curr.next;
+        }
+
+     }
                 return;
+}
