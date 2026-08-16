@@ -1,0 +1,11 @@
+// Title: Rising Temperature
+            // Difficulty: Easy
+            // Language: MS SQL Server
+            // Link: https://leetcode.com/problems/rising-temperature/
+
+/* Write your T-SQL query statement below */
+select w1.id as Id
+from Weather w1 
+cross join Weather w2 
+where w1.temperature > w2.temperature and
+datediff(day,w1.recordDate,w2.recordDate)=-1
