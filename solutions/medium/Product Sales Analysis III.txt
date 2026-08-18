@@ -1,0 +1,21 @@
+// Title: Product Sales Analysis III
+            // Difficulty: Medium
+            // Language: MS SQL Server
+            // Link: https://leetcode.com/problems/product-sales-analysis-iii/
+
+/* Write your T-SQL query statement below */
+select a1.product_id ,
+a1.first_year,
+a2.quantity,
+a2.price
+from(
+        select product_id,min(year) as first_year from Sales 
+        group by product_id 
+) as a1 
+on a1.product_id=a2.product_id and a1.first_year=a2.year
+
+inner join (
+    select * from Sales 
+) as a2
+/*select product_id,min(year) from Sales 
+        group by product_id*/
