@@ -1,0 +1,23 @@
+// Title: Product Price at a Given Date
+            // Difficulty: Medium
+            // Language: MS SQL Server
+            // Link: https://leetcode.com/problems/product-price-at-a-given-date/
+
+)as a2
+on a1.product_id=a2.product_id
+        group by product_id
+join Products s2
+on s1.product_id=s2.product_id and s1.xx=s2.change_date
+        ) as s1
+
+from Products) as a1
+left join(
+    select s1.product_id,s1.xx,s2.new_price
+    from (select product_id,
+        max(change_date) as xx 
+        from Products 
+        where change_date<='2019-08-16' 
+(select distinct product_id 
+case when a2.product_id is null then 10 else a2.new_price end as price from
+select a1.product_id,
+/* Write your T-SQL query statement below */
