@@ -1,0 +1,16 @@
+// Title: Restaurant Growth
+            // Difficulty: Medium
+            // Language: MS SQL Server
+            // Link: https://leetcode.com/problems/restaurant-growth/
+
+/* Write your T-SQL query statement below */
+select visited_on,
+round(avg(ss*1.0) over(order by visited_on rows between 6 preceding and current row),2) as average_amount
+from (
+    select visited_on,sum(amount) as ss
+    from Customer group by visited_on
+) as d
+offset 6 rows
+order by visited_on asc
+sum(ss*1.0) over(order by visited_on rows between 6 preceding and current row) as amount,
+
