@@ -1,0 +1,18 @@
+// Title: Merge Strings Alternately
+            // Difficulty: Easy
+            // Language: Python3
+            // Link: https://leetcode.com/problems/merge-strings-alternately/
+
+        w1=0
+        w2=0
+        while(w1<len(word1) or w2<len(word2)):
+            if w1<len(word1) :
+            if w2<len(word2):
+            w1+=1
+            w2+=1
+                ls.append(word1[w1])
+                ls.append(word2[w2])
+        return ''.join(ls)
+        ls=[]
+        
+    def mergeAlternately(self, word1: str, word2: str) -> str:
