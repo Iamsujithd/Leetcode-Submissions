@@ -1,0 +1,19 @@
+// Title: Increasing Triplet Subsequence
+            // Difficulty: Medium
+            // Language: Python3
+            // Link: https://leetcode.com/problems/increasing-triplet-subsequence/
+
+        
+        low=float('inf')
+        mid=float('inf')
+
+        for i in range(len(nums)):
+            if(nums[i]<=low):
+                low=nums[i]
+            elif(nums[i]<=mid):
+                mid=nums[i]
+            else:
+                return True
+
+        return False
+
